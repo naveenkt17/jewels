@@ -14,7 +14,8 @@ menuButton.addEventListener("click", () => {
 const imagesChagner = function (event) {
   if (event.target.tagName === "IMG") {
     const imageUrl = event.target.getAttribute("src");
-    const backgroundContainer = event.target.closest(".card-img");
+    const imageUrlParent = event.target.closest(".card-img");
+    const backgroundContainer = imageUrlParent.querySelector(".large-img");    
     const activeList = backgroundContainer.querySelectorAll(".thumb-item");
     activeList.forEach((data) => {
       data.classList.remove("active");
